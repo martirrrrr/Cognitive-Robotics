@@ -22,7 +22,7 @@ ___
 - **Pepper**: Humanoid robot for interaction and audio/video data acquisition, equipped with microphones and a camera for facial expression and voice tone analysis.
 - **Emotiv Epoc X**: EEG sensor for brain data acquisition, capable of detecting emotional states by reading brain waves.
 - **Device 1 (Ubuntu 14.04LTS)**: Main server managing data processing and emotion prediction.
-- **Device 2 (macOS)**: Used to manage EEG acquisition via the Emotiv APP and transfer data to the main server.
+- **Device 2 (macOS)**: Used to manage EEG acquisition via the Emotiv APP and transfer data to the main server. (optional, Device 2 tasks can be integrated on Device 1 if system requirements are satisfied.)
 
 ---
 
