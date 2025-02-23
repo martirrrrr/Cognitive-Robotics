@@ -6,9 +6,11 @@ This project aims to create an **emotion-aware human-robot interaction system** 
 ## Model and Code
 The emotion classification model is trained using **RAVDESS** (for audio/video) and **SEED-IV** (for EEG) datasets. The implementation and model details are available on GitHub:
 
-🔗 **[GitHub Model Repository]([https://github.com/RenatoEsposito1999/Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification])**
+🔗 **[GitHub Model Repository](https://github.com/RenatoEsposito1999/Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification)**
 
 For more details on the data flow and process, refer to the documentation in this repository.
+
+Mentioned model requires download of SEED-IV, available by request at following link.
 
 🔗 **[SEED-IV](https://bcmi.sjtu.edu.cn/~seed/seed-iv.html)**
 
