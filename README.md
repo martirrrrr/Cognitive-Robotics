@@ -16,7 +16,7 @@ Mentioned model requires download of SEED-IV, available by request at following 
 
 
 
-**Data Flow and Process of the Project**
+___
 
 ## **Involved Devices**
 - **Pepper**: Humanoid robot for interaction and audio/video data acquisition, equipped with microphones and a camera for facial expression and voice tone analysis.
