@@ -16,7 +16,7 @@ Mentioned model requires download of SEED-IV, available by request at following 
 
 ___
 
-![Graphic representation of processes and dataflow](images/map.pdf)
+![Graphic representation of processes and dataflow](images/map.png)
 ___
 
 ## **Involved Devices**
