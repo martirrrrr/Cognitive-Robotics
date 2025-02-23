@@ -1,3 +1,6 @@
+
+
+
 **Data Flow and Process of the Project**
 
 ## **Involved Devices**
@@ -71,7 +74,3 @@ Based on the classification output, Pepper adopts specific interaction strategie
 - Data is saved and compared with the previous prediction to monitor the system’s effectiveness in improving user well-being.
 
 ---
-
-## **Conclusion**
-This system integrates advanced technologies for emotion acquisition and analysis, offering an adaptive and personalized interaction. Through a continuous learning cycle, Pepper adapts to user needs, progressively improving interaction quality and promoting emotional well-being.
-
