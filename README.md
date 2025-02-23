@@ -60,7 +60,8 @@ Based on the classification output, Pepper adopts specific interaction strategie
   - The user can choose from three options:
     1. Jokes and entertainment.
     2. Meditation.
-    3. Interactive quiz using a tablet (to be implemented).
+    3. Music and dance.
+    4. Interactive quiz using a tablet (to be implemented).
 
 ---
 
