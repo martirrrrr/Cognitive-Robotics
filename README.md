@@ -15,6 +15,12 @@ Mentioned model requires download of SEED-IV, available by request at following 
 🔗 **[SEED-IV](https://bcmi.sjtu.edu.cn/~seed/seed-iv.html)**
 
 ___
+To run the metamodel:
+```bash
+python main.py --no_train --no_val --test --predict --eeg_path
+```
+
+___
 
 ![Graphic representation of processes and dataflow](images/map.png)
 ___
