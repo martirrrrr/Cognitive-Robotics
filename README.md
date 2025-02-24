@@ -35,7 +35,7 @@ mv SEED-IV/eeg_raw_data/ Cognitive-Robotics-Project-Multi-Modal-Emotion-Classifi
 ```
 Your folders should appear like this example:
 ```
-📂 parent-directory (directory principale)
+📂 parent-directory
 │
 ├───📂 Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification
 │   │
