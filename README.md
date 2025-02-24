@@ -68,7 +68,7 @@ Your folders should appear like this example:
 │   ├───📂 images
 │   └──📂 data
 ```
-2. Download EmotivAPP for headset data acquisition. Open this app and put your headset on. After electrodes reach >90% accuracy, you can start EEG acquisition.
+2. Download EmotivAPP for headset data acquisition. Open this app and put your headset on. After electrodes reach >90% accuracy, you can start EEG acquisition. If there is no headset available, you could use csv EEG data in cognitive-robotics/data/ and move it to EEG_model folder.
 
 3. Then, run /scripts/init.py, specifying your model path:
 ```bash
