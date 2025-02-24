@@ -57,7 +57,7 @@ ___
 ![Graphic representation of processes and dataflow](images/map.png)
 ___
 
-## IV. **Involved Devices**
+## III. **Involved Devices**
 - **Pepper**: Humanoid robot for interaction and audio/video data acquisition, equipped with microphones and a camera for facial expression and voice tone analysis.
 - **Emotiv Epoc X**: EEG sensor for brain data acquisition, capable of detecting emotional states by reading brain waves.
 - **Device 1 (Ubuntu 14.04LTS)**: Main server managing data processing and emotion prediction.
@@ -65,7 +65,7 @@ ___
 
 ---
 
-## III. **Process Phases**
+## IV. **Steps**
 The following process explanation describes the dataflow and the sequence of actions performed by authors' devices. For single device run, skip the SCP transfer step between Device1 and Device2 in EEG acquisition.
 
 ### **0. Connection and Startup**
@@ -108,16 +108,16 @@ The following process explanation describes the dataflow and the sequence of act
 ### **3. Human-Machine Interaction**
 Based on the classification output, Pepper adopts specific interaction strategies to improve the user's emotional well-being:
 
-- **Sad:**
+- **😔 Sad:**
   - Pepper provides a selection of jokes and light-hearted stories to entertain the user.
   - If sadness persists, it can offer a short motivational story.
-- **Angry:**
+- **😠 Angry:**
   - Suggests a guided meditation session (short or long) with breathing exercises.
   - Can play relaxing sounds such as ocean waves or rainfall to promote relaxation.
-- **Happy:**
+- **😊 Happy:**
   - Reinforces positive emotions through music and dance.
   - Pepper performs specific movements synchronized with the user's chosen music.
-- **Neutral:**
+- **😐 Neutral:**
   - The user can choose from three options:
     1. Jokes and entertainment.
     2. Meditation.
