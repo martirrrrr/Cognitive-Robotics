@@ -15,10 +15,30 @@ Mentioned model requires download of SEED-IV, available by request at following 
 🔗 **[SEED-IV](https://bcmi.sjtu.edu.cn/~seed/seed-iv.html)**
 
 ___
-To run the metamodel:
+## System requirements
+
+___
+## Run this project
+Download SEED-IV and MetaModel following links mentioned before and move SEED-IV/eeg_raw_data/ folder in the /EEG_model/dataset/ folder.
 ```bash
-python main.py --no_train --no_val --test --predict --eeg_path
+mv SEED-IV/eeg_raw_data/ Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification/EEG_model/dataset/
 ```
+
+Download EmotivAPP for headset data acquisition.
+
+Run /scripts/init.py, specifying your model path:
+```bash
+python init.py /mylocalpath/model/
+```
+This run will activate your Pepper interaction session and will record audio/video data of the user.
+Simultaneously, data acquisition process via Emotiv Epoc X must be executed by EmotivAPP. Please, don't remove your headset until the demo is not ended.
+
+To run the meta-model, move to the correspondent folder Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification/Meta_model/ and run:
+```bash
+python main.py --no_train --no_val --test --predict
+```
+If eeg_path is already cached in local, please load it by including --eeg_path option.
+See opt file for more details.
 
 ___
 
