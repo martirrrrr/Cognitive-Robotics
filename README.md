@@ -15,7 +15,7 @@ Mentioned model requires download of SEED-IV, available by request at following 
 🔗 **[SEED-IV](https://bcmi.sjtu.edu.cn/~seed/seed-iv.html)**
 
 ___
-## System and environment requirements
+## 1. System and environment requirements
 Metamodel for emotion classification requires following dependencies:
 - Python 3.9
 - PyTorch 2.6
@@ -29,7 +29,7 @@ Pepper interaction scripts require:
 🤖 Pepper version: 1.8 (follow this **[link](http://doc.aldebaran.com/2-5/family/pepper_technical/pepper_versions.html)** for further details on your Pepper version.
 🧠 Headset version: Empatica EPOC X (14 channels headset)
 ___
-## Run this project
+## 2. Run this project
 Download SEED-IV and MetaModel following links mentioned before and move SEED-IV/eeg_raw_data/ folder in the /EEG_model/dataset/ folder.
 ```bash
 mv SEED-IV/eeg_raw_data/ Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification/EEG_model/dataset/
@@ -61,11 +61,12 @@ ___
 - **Pepper**: Humanoid robot for interaction and audio/video data acquisition, equipped with microphones and a camera for facial expression and voice tone analysis.
 - **Emotiv Epoc X**: EEG sensor for brain data acquisition, capable of detecting emotional states by reading brain waves.
 - **Device 1 (Ubuntu 14.04LTS)**: Main server managing data processing and emotion prediction.
-- **Device 2 (macOS)**: Used to manage EEG acquisition via the Emotiv APP and transfer data to the main server. (optional, Device 2 tasks can be integrated on Device 1 if system requirements are satisfied.)
+- **Device 2 (any)**: Used to manage EEG acquisition via the Emotiv APP and transfer data to the main server. (optional, Device 2 tasks can be integrated on Device 1 if system requirements are satisfied.)
 
 ---
 
-## **Process Phases**
+## III. **Process Phases**
+The following process explanation describes the dataflow and the sequence of actions performed by authors' devices. For single device run, skip the SCP transfer step between Device1 and Device2 in EEG acquisition.
 
 ### **0. Connection and Startup**
 1. **Powering up Pepper** and connecting it to Device 1 via a local network for data transmission.
