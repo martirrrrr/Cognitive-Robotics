@@ -23,11 +23,11 @@ Metamodel for emotion classification requires following dependencies:
 
 Pepper interaction scripts require:
 - Python 2.7
-- Ubuntu 14.04
+- Ubuntu 14.04 (different versions of Ubuntu/Linux are not supported.)
 - **[NAOqi](https://developer.softbankrobotics.com)** available at this link from SoftBankRobotics official website.
 
-Pepper version: 1.8 (follow this **[link]**(http://doc.aldebaran.com/2-5/family/pepper_technical/pepper_versions.html) for further details on your Pepper version.
-Headset version: Empatica EPOC X (14 channels headset)
+🤖 Pepper version: 1.8 (follow this **[link](http://doc.aldebaran.com/2-5/family/pepper_technical/pepper_versions.html)** for further details on your Pepper version.
+🧠 Headset version: Empatica EPOC X (14 channels headset)
 ___
 ## Run this project
 Download SEED-IV and MetaModel following links mentioned before and move SEED-IV/eeg_raw_data/ folder in the /EEG_model/dataset/ folder.
@@ -42,9 +42,10 @@ Run /scripts/init.py, specifying your model path:
 python init.py /Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification/
 ```
 This run will activate your Pepper interaction session and will record audio/video data of the user.
-Simultaneously, data acquisition process via Emotiv Epoc X must be executed by EmotivAPP. Please, don't remove your headset until the demo is not ended.
+Simultaneously, data acquisition process via Emotiv Epoc X must be executed by EmotivAPP. Please, don't remove your headset until the demo is not ended and download the output .csv file in the appropriate directory of the EEG_model folder.
 
-To run the meta-model, move to the correspondent folder Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification/Meta_model/ and run:
+
+To test **only** the meta-model, move to the correspondent folder Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification/Meta_model/ and run:
 ```bash
 python main.py --no_train --no_val --test --predict
 ```
