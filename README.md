@@ -45,9 +45,11 @@ ___
 
 #### **Audio/Video Data:**
 - **Pepper uses its camera** to record the user's facial expressions and microphone to analyze voice tone.
+- An audio file and a separate video file are recorded, both approximately 5 seconds long, with the extensions .wav (pepper_audio.wav) and .ova (pepper_video.ova), respectively.
 - Data is stored locally on Pepper.
-- Through a TCP connection, Pepper sends the data to Device 1 for processing.
-
+- Through SCP Pepper, Pepper sends the data to Device 1 for processing.
+- The separate audio and video files are merged using the ffmpeg command into a single .mp4 file (input.mp4), specifically, the format required by the model for multimedia data.
+  
 ---
 
 ### **2. Processing and Final Prediction**
@@ -59,7 +61,8 @@ ___
    - **Sad**
    - **Happy**
    - **Neutral**
-3. **Execution on Device 1:** the entire processing workflow occurs locally to ensure speed and security in handling sensitive data.
+3. **Model's predicition:** the model's predictions are saved in a .txt file (predictions.txt). Specifically, a new file is created for each interaction with Pepper, and inside it, the integers corresponding to the predicted emotions are saved (neutral -> 0, happy -> 1, angry -> 2, sad -> 3).  
+4. **Execution on Device 1:** the entire processing workflow occurs locally to ensure speed and security in handling sensitive data.
 
 ---
 
