@@ -61,8 +61,8 @@ ___
    - **Sad**
    - **Happy**
    - **Neutral**
-3. **Model's predicition:** the model's predictions are saved in a .txt file (predictions.txt). Specifically, a new file is created for each interaction with Pepper, and inside it, the integers corresponding to the predicted emotions are saved (neutral -> 0, happy -> 1, angry -> 2, sad -> 3).  
-4. **Execution on Device 1:** the entire processing workflow occurs locally to ensure speed and security in handling sensitive data.
+3. **Model's predicition:** the model's predictions are saved in a .txt file (predictions.txt). Specifically, a new file is created for each interaction with Pepper, and inside it, the integers corresponding to the predicted emotions are saved (neutral -> 0, happy -> 1, angry -> 2, sad -> 3), if multiple predictions are made during the same interaction with Pepper, the new ones are added on a new line.  
+4. **Execution on Device 1:** the entire processing workflow occurs locally to ensure speed and security in handling sensitive data. The device reads the integer corresponding to the last line and selects the corresponding behavior for Pepper to execute.
 
 ---
 
