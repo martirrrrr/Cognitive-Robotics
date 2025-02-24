@@ -15,8 +15,19 @@ Mentioned model requires download of SEED-IV, available by request at following 
 🔗 **[SEED-IV](https://bcmi.sjtu.edu.cn/~seed/seed-iv.html)**
 
 ___
-## System requirements
+## System and environment requirements
+Metamodel for emotion classification requires following dependencies:
+- Python 3.9
+- PyTorch 2.6
+- Torcheeg 1.1.3
 
+Pepper interaction scripts require:
+- Python 2.7
+- Ubuntu 14.04
+- **[NAOqi](https://developer.softbankrobotics.com)** available at this link from SoftBankRobotics official website.
+
+Pepper version: 1.8 (follow this **[link]**(http://doc.aldebaran.com/2-5/family/pepper_technical/pepper_versions.html) for further details on your Pepper version.
+Headset version: Empatica EPOC X (14 channels headset)
 ___
 ## Run this project
 Download SEED-IV and MetaModel following links mentioned before and move SEED-IV/eeg_raw_data/ folder in the /EEG_model/dataset/ folder.
@@ -28,7 +39,7 @@ Download EmotivAPP for headset data acquisition.
 
 Run /scripts/init.py, specifying your model path:
 ```bash
-python init.py /mylocalpath/model/
+python init.py /Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification/
 ```
 This run will activate your Pepper interaction session and will record audio/video data of the user.
 Simultaneously, data acquisition process via Emotiv Epoc X must be executed by EmotivAPP. Please, don't remove your headset until the demo is not ended.
@@ -117,5 +128,6 @@ Based on the classification output, Pepper adopts specific interaction strategie
 - After the interaction, the user can choose to repeat the process to assess the effect of their engagement with Pepper.
 - A new EEG and audio/video acquisition is performed to analyze emotional state variations.
 - Data is saved and compared with the previous prediction to monitor the system’s effectiveness in improving user well-being.
+We will compare the accuracy of the initial predicted class with the correspondent output post-interaction to track the effect of the entertainment session with Pepper.
 
 ---
