@@ -30,14 +30,14 @@ Pepper interaction scripts require:
 - 🧠 Headset version: Empatica EPOC X (14 channels headset)
 ___
 ## II. Run this project
-Download SEED-IV and MetaModel following links mentioned before and move SEED-IV/eeg_raw_data/ folder in the /EEG_model/dataset/ folder.
+1. Download this repository, SEED-IV dataset and MetaModel repository following links mentioned before and move SEED-IV/eeg_raw_data/ folder in the /EEG_model/dataset/ folder.
 ```bash
 mv SEED-IV/eeg_raw_data/ Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification/EEG_model/dataset/
 ```
 
-Download EmotivAPP for headset data acquisition.
+2. Download EmotivAPP for headset data acquisition. Open this app and put your headset on. After electrodes reach >90% accuracy, you can start EEG acquisition.
 
-Run /scripts/init.py, specifying your model path:
+3. Then, run /scripts/init.py, specifying your model path:
 ```bash
 python init.py /Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification/
 ```
