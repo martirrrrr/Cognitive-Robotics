@@ -15,7 +15,7 @@ Mentioned model requires download of SEED-IV, available by request at following 
 🔗 **[SEED-IV](https://bcmi.sjtu.edu.cn/~seed/seed-iv.html)**
 
 ___
-## 1. System and environment requirements
+## I. System and environment requirements
 Metamodel for emotion classification requires following dependencies:
 - Python 3.9
 - PyTorch 2.6
@@ -26,10 +26,10 @@ Pepper interaction scripts require:
 - Ubuntu 14.04 (different versions of Ubuntu/Linux are not supported.)
 - **[NAOqi](https://developer.softbankrobotics.com)** available at this link from SoftBankRobotics official website.
 
-🤖 Pepper version: 1.8 (follow this **[link](http://doc.aldebaran.com/2-5/family/pepper_technical/pepper_versions.html)** for further details on your Pepper version.
-🧠 Headset version: Empatica EPOC X (14 channels headset)
+- 🤖 Pepper version: 1.8 (follow this **[link](http://doc.aldebaran.com/2-5/family/pepper_technical/pepper_versions.html)** for further details on your Pepper version.
+- 🧠 Headset version: Empatica EPOC X (14 channels headset)
 ___
-## 2. Run this project
+## II. Run this project
 Download SEED-IV and MetaModel following links mentioned before and move SEED-IV/eeg_raw_data/ folder in the /EEG_model/dataset/ folder.
 ```bash
 mv SEED-IV/eeg_raw_data/ Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification/EEG_model/dataset/
@@ -57,7 +57,7 @@ ___
 ![Graphic representation of processes and dataflow](images/map.png)
 ___
 
-## **Involved Devices**
+## IV. **Involved Devices**
 - **Pepper**: Humanoid robot for interaction and audio/video data acquisition, equipped with microphones and a camera for facial expression and voice tone analysis.
 - **Emotiv Epoc X**: EEG sensor for brain data acquisition, capable of detecting emotional states by reading brain waves.
 - **Device 1 (Ubuntu 14.04LTS)**: Main server managing data processing and emotion prediction.
