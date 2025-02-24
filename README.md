@@ -34,9 +34,10 @@ ___
 mv SEED-IV/eeg_raw_data/ Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification/EEG_model/dataset/
 ```
 Your folders should appear like this example:
+```
 📂 parent-directory (directory principale)
 │
-├───📂 project-root
+├───📂 Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification
 │   │
 │   ├───📂 audio_video_emotion_recognition_model
 │   │   ├───📂 datasets       
@@ -63,12 +64,10 @@ Your folders should appear like this example:
 │   └───📂 Shared
 │
 ├───📂 cognitive-robotics
-│   ├───📂 subfolder1
-│   ├───📂 subfolder2
 │   ├───📂 scripts
-│   ├───📂 models
-│   └───📂 docs
-
+│   ├───📂 images
+│   └──📂 data
+```
 2. Download EmotivAPP for headset data acquisition. Open this app and put your headset on. After electrodes reach >90% accuracy, you can start EEG acquisition.
 
 3. Then, run /scripts/init.py, specifying your model path:
