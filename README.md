@@ -25,7 +25,6 @@ Pepper interaction scripts require:
 - Python 2.7
 - Ubuntu 14.04 (different versions of Ubuntu/Linux are not supported.)
 - **[NAOqi](https://developer.softbankrobotics.com)** available at this link from SoftBankRobotics official website.
-
 - 🤖 Pepper version: 1.8 (follow this **[link](http://doc.aldebaran.com/2-5/family/pepper_technical/pepper_versions.html)** for further details on your Pepper version.
 - 🧠 Headset version: Empatica EPOC X (14 channels headset)
 ___
@@ -34,6 +33,41 @@ ___
 ```bash
 mv SEED-IV/eeg_raw_data/ Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification/EEG_model/dataset/
 ```
+Your folders should appear like this example:
+📂 parent-directory (directory principale)
+│
+├───📂 project-root
+│   │
+│   ├───📂 audio_video_emotion_recognition_model
+│   │   ├───📂 datasets       
+│   │   ├───📂 Data_preprocessing        
+│   │   ├───📂 Image      
+│   │   ├───📂 Multimodal_transformer 
+│   │   │   ├───📂 Preprocessing_CNN  
+│   │   │   │   ├───📂 Preprocessing_utils
+│   │   │   │   
+│   │   │   ├───📂 Transformers
+│   │   │           
+│   │   ├───📂 results      
+│   │   ├───📂 utils
+│   │                 
+│   ├───📂 EEG_model  
+│   │   ├───📂 datasets   
+│   │   ├───📂 Images     
+│   │   ├───📂 results       
+│   │   ├───📂 utils 
+│   │     
+│   ├───📂 envs    
+│   ├───📂 Meta_model        
+│   │   ├───📂 results      
+│   └───📂 Shared
+│
+├───📂 cognitive-robotics
+│   ├───📂 subfolder1
+│   ├───📂 subfolder2
+│   ├───📂 scripts
+│   ├───📂 models
+│   └───📂 docs
 
 2. Download EmotivAPP for headset data acquisition. Open this app and put your headset on. After electrodes reach >90% accuracy, you can start EEG acquisition.
 
