@@ -45,6 +45,19 @@ def main():
         input_dir
     ]
 
+    prediction_command = [
+        "python", 
+        "Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification/Meta_model/main.py",
+        "--no_train", 
+        "--no_val", 
+        "--predict",
+        "--test", 
+        "--device", 
+        "cpu",
+        "--path_cached",
+        "/home/mungowz/.torcheeg/datasets_1740404252543_i0VpE"
+    ]
+
     pepper_test = pepper.Pepper()
     pepper_test.text_to_speech.say("Hi how are you feeling today?")
     print("[PEPPER] Hi how are you feeling today?\n")   
@@ -70,20 +83,8 @@ def main():
     print("[PEPPER] I'm processing your data...\n")
     pepper_test.text_to_speech.say("Please wait!")
     print("[PEPPER] Please wait!\n")
-        
-    command = [
-        "python", 
-        "Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification/Meta_model/main.py",
-        "--no_train", 
-        "--no_val", 
-        "--predict",
-        "--test", 
-        "--device", 
-        "cpu",
-        "--path_cached",
-        "/home/mungowz/.torcheeg/datasets_1740404252543_i0VpE"
-    ]      
-    subprocess.run(command)    
+            
+    subprocess.run(prediction_command)    
      
     with open(predictions_dir, "r") as file:
         lines = file.readlines()
@@ -119,20 +120,8 @@ def main():
     print("[INFO] Video received!\n")
 
     subprocess.run(ffmpeg_command)
-        
-    command = [
-        "python", 
-        "Cognitive-Robotics-Project-Multi-Modal-Emotion-Classification/Meta_model/main.py",
-        "--no_train", 
-        "--no_val", 
-        "--predict",
-        "--test", 
-        "--device", 
-        "cpu",
-        "--path_cached",
-        "/home/mungowz/.torcheeg/datasets_1740404252543_i0VpE"
-    ]      
-    subprocess.run(command)
+           
+    subprocess.run(prediction_command)
        
 if __name__ == "__main__":
     main()
