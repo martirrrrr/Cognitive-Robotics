@@ -55,7 +55,7 @@ def main():
         "--device", 
         "cpu",
         "--path_cached",
-        "/home/mungowz/.torcheeg/datasets_1740404252543_i0VpE"
+        "/home/mungowz/.torcheeg/datasets_1740495597019_i0VpE"
     ]
 
     pepper_test = pepper.Pepper()
