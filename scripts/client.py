@@ -29,6 +29,8 @@ def pc_client():
             stdout, stderr = result.communicate()
             
             client_socket.sendall("6".encode())
+            
+            client_socket.recv(1024).decode()
                 
             command = random.randint(0, 3)
             print("[INFO] Sending command: " + str(command) + ".\n")

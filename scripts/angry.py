@@ -1,5 +1,5 @@
 import time
-import poses
+import poses_old
 import utils
 
 
@@ -24,7 +24,7 @@ def user_feedback():
         elif choice == "no":
             utils.text_to_speech.say("Okay! Goodbye!")
             print("[PEPPER] Okay! Goodbye!\n")
-            poses.bye()
+            poses_old.bye()
             return False
 
         else:
@@ -114,12 +114,12 @@ def quick_meditation():
     utils.text_to_speech.say("Find a comfortable position, sitting or standing.")
     print("[PEPPE] Find a comfortable position, sitting or standing.\n")
     time.sleep(2.0)
-    poses.perform_meditation_pose()
+    poses_old.perform_meditation_pose()
 
     utils.text_to_speech.say("Close your eyes if you like, or focus on a calm point in front of you.")
     print("[PEPPER] Close your eyes if you like, or focus on a calm point in front of you.\n")
     time.sleep(2.0)
-    poses.perform_meditation_pose()
+    poses_old.perform_meditation_pose()
 
     breathing_guide()
     utils.text_to_speech.say("Now try it on your own!")

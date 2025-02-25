@@ -4,19 +4,22 @@ import sad
 import happy
 import neutral 
 import angry
-import poses
+import poses_old
 import subprocess
 
+def test():
+    sad.main()
 
 def main():
     utils.text_to_speech.say("Hi how are you feeling today?")
     print("[PEPPER] Hi how are you feeling today?\n")   
+    time.sleep(2)
       
-    poses.lock_head() 
+    poses_old.lock_head() 
             
     record.record_audio_video("pepper_video", "pepper_audio")   
             
-    poses.unlock_head()
+    poses_old.unlock_head()
             
     command = [
         "sshpass", 
@@ -103,19 +106,19 @@ def main():
     utils.text_to_speech.say("How it was?")
     print("[Pepper] How it was?\n") 
      
-    poses.lock_head()
+    poses_old.lock_head()
  
     record.record_audio_video("pepper_video", "pepper_audio")   
             
-    poses.unlock_head()           
+    poses_old.unlock_head()           
             
     command = [
-                "sshpass", 
-                "-p", 
-                "pepperina2023", 
-                "scp", 
-                "nao@192.168.1.104:/home/nao/transfer/pepper_video.avi", 
-                "/home/mungowz/cognitive_robotics/video/pepper_video.avi"
+        "sshpass", 
+        "-p", 
+        "pepperina2023", 
+        "scp", 
+        "nao@192.168.1.104:/home/nao/transfer/pepper_video.avi", 
+        "/home/mungowz/cognitive_robotics/video/pepper_video.avi"
     ]
     subprocess.run(command)
             
@@ -149,4 +152,4 @@ def main():
      
             
 if __name__ == "__main__":
-    main()  
+    test()  

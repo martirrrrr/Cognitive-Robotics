@@ -1,7 +1,7 @@
 import time
 import threading
 import utils
-import poses
+import poses_old
 
 
 def main():
@@ -22,7 +22,7 @@ def main():
                 print("[PEPPER] Great choice!\n")
                 time.sleep(2.0)
                 if not flag_second_choice:
-                    poses.perform_stretching()
+                    poses_old.perform_stretching()
                 
                 while True:
                     utils.text_to_speech.say("Tell me what kind of music you prefer: techno, classical, or rock.")
@@ -33,9 +33,9 @@ def main():
                     time.sleep(2.0)
 
                     dance_functions = {
-                        "techno": poses.perform_techno_dance,
-                        "classical": poses.perform_classic_dance,
-                        "rock": poses.perform_rock_dance
+                        "techno": poses_old.perform_techno_dance,
+                        "classical": poses_old.perform_classic_dance,
+                        "rock": poses_old.perform_rock_dance
                     }
 
                     dance_function = dance_functions.get(user_choice, None)
