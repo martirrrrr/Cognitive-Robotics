@@ -16,7 +16,7 @@ class Pepper:
         "short",
         "long",
         "rock", 
-        "techno", 
+        "house", 
         "classical",
         "relax", 
         "music", 
@@ -35,8 +35,8 @@ class Pepper:
         self.audio_recorder = self.session.service("ALAudioRecorder")
         self.robot_posture = self.session.service("ALRobotPosture")
         self.set_speech_service()
-        self.poses_module = poses.Poses(self.motion, self.robot_posture)
-        self.behaviour_module = behaviours.Behaviours(self.text_to_speech, self.poses_module)
+        self.poses_module = poses.Poses(self.motion, self.robot_posture, self.text_to_speech)
+        self.behaviours_module = behaviours.Behaviours(self.text_to_speech, self.poses_module)
 
     def connect_to_pepper(self):
         session = qi.Session()
@@ -60,11 +60,12 @@ class Pepper:
                 event_data = self.memory.getData("WordRecognized")
                 if event_data and isinstance(event_data, list) and len(event_data) > 1:
                     word, confidence = event_data[0], event_data[1]
-                    if confidence >= 0.4:
+                    if confidence >= 0.5:
                         recognized_word = word
                         print("[INFO] Detected word: " + str(recognized_word) + ".\n")
                         self.text_to_speech.say("You have said: " + str(recognized_word))
                         print("[PEPPER] You have said: " + str(recognized_word) + ".\n")
+                        self.memory.removeData("WordRecognized")
                 time.sleep(0.1)
             
         except Exception as e:
@@ -76,12 +77,12 @@ class Pepper:
         self.speech_recognition.pause(True)
         self.speech_recognition.setLanguage("English")
         self.text_to_speech.setLanguage("English")
-        self.speech_recognition.setVocabulary(Pepper.vocabulary, False)
+        self.speech_recognition.setVocabulary(Pepper.VOCABULARY, False)
         self.speech_recognition.subscribe("Recognizer")
         self.speech_recognition.pause(False)
 
     def play_sound(self, sound_file):
-        self.audio_player.playFile(self.behaviour_module.SOUND_FILES.get(sound_file, None))
+        self.audio_player.playFile(self.behaviours_module.SOUND_FILES.get(sound_file, None))
 
     def start_video_recording(self, filename):
         try:
@@ -141,14 +142,14 @@ class Pepper:
         except Exception as e:
             print("[ERROR] An issue occurred:", e)     
 
-    def perform_behaviour(self, behaviour):
+    def perform_behaviours(self, behaviour):
         if behaviour == 0:
-            self.behaviour_module.perform_neutral(self.play_sound, self.recognize_speech)
+            self.behaviours_module.perform_neutral(self.play_sound, self.recognize_speech)
         elif behaviour == 1:
-            self.perform_happy(self.play_sound, self.recognize_speech)
+            self.behaviours_module.perform_happy(self.play_sound, self.recognize_speech)
         elif behaviour == 2:
-            self.perform_angry(self.play_sound, self.recognize_speech)
+            self.behaviours_module.perform_angry(self.play_sound, self.recognize_speech)
         else:
-            self.perform_sad(self.play_sound, self.recognize_speech)
+            self.behaviours_module.perform_sad(self.play_sound, self.recognize_speech)
 
     

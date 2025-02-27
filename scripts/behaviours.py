@@ -37,7 +37,7 @@ class Behaviours:
         "seashore": "/home/nao/CR/seashore.mp3",
         "quick_meditation": "/home/nao/CR/quick_meditation.mp3",
         "full_meditation": "/home/nao/CR/full_meditation.mp3",
-        "techno": "/home/nao/CR/techno.mp3",
+        "house": "/home/nao/CR/techno.mp3",
         "classical": "/home/nao/CR/classic.mp3",
         "rock": "/home/nao/CR/rock2.mp3",
         "comedy": "/home/nao/CR/comedy.mp3"
@@ -78,7 +78,7 @@ class Behaviours:
                     print("Answer not allowed, retry!\n")
 
         except Exception as e:
-            print("Error: " + str(e))
+            print("Error: ", str(e))
             return None 
 
     def perform_happy(self, play_sound_callback, recognize_speech_callback):
@@ -101,13 +101,13 @@ class Behaviours:
                         self.poses_module.perform_stretching()
                     
                     while True:
-                        self.text_to_speech.say("Tell me what kind of music you prefer: techno, classical, or rock.")
-                        print("[PEPPER] Tell me what kind of music you prefer: techno, classical, or rock.\n")
+                        self.text_to_speech.say("Tell me what kind of music you prefer: house, classical, or rock.")
+                        print("[PEPPER] Tell me what kind of music you prefer: house, classical, or rock.\n")
                         user_choice = recognize_speech_callback()
                         time.sleep(1.0)
 
                         dance_functions = {
-                            "techno": self.poses_module.perform_techno_dance,
+                            "house": self.poses_module.perform_techno_dance,
                             "classical": self.poses_module.perform_classic_dance,
                             "rock": self.poses_module.perform_rock_dance
                         }
@@ -353,12 +353,13 @@ class Behaviours:
             print("[PEPPER] If you're feeling sad, a joke might lift your spirits!\n")
             time.sleep(2.0)
 
-            joke_index = random.randint(0, len(Behaviours.JOKES) - 1)
+            joke_index = 0 # random.randint(0, len(Behaviours.JOKES) - 1)
 
             self.text_to_speech.say(Behaviours.JOKES[joke_index])
             print("[PEPPER] " + Behaviours.JOKES[joke_index] + ".\n") 
             play_sound_callback("comedy")
-
+            joke_index += 1
+            
             while True:
                 self.text_to_speech.say("Do you want to hear another one? Reply yes or no.")
                 print("[PEPPER] Do you want to hear another one? Reply yes or no.\n")
@@ -368,8 +369,9 @@ class Behaviours:
 
                 if recognized_word == "yes":
                     self.text_to_speech.say(Behaviours.JOKES[joke_index])
-                    print("[PEPPER] " + Behaviours[joke_index] + ".\n") 
+                    print("[PEPPER] " + Behaviours.JOKES[joke_index] + ".\n") 
                     play_sound_callback("comedy")
+                    joke_index += 1
                     time.sleep(2.0)
 
                 elif recognized_word == "no":
@@ -381,7 +383,6 @@ class Behaviours:
                 else:
                     self.text_to_speech.say("Answer not allowed, retry!")
                     print("[PEPPER] Answer not allowed, retry!\n")     
-
         except Exception as e:
             print("[ERROR] A problem occurred:", e)
 

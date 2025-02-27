@@ -1,9 +1,10 @@
 import time
 
 class Poses:
-    def __init__(self, motion, robot_posture):
+    def __init__(self, motion, robot_posture, text_to_speech):
         self.motion = motion
         self.robot_posture = robot_posture
+        self.text_to_speech = text_to_speech
 
     def bye(self):
         try:

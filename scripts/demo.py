@@ -3,6 +3,10 @@ import subprocess
 import time
 from pathlib import Path
 
+def test():
+    pepper_test = pepper.Pepper()
+    pepper_test.behaviours_module.perform_neutral(pepper_test.play_sound, pepper_test.recognize_speech)
+
 def main():
     script_dir = Path(__file__).parent
     parent_dir = script_dir.parent
@@ -10,6 +14,8 @@ def main():
     audio_dir = parent_dir / "audio/pepper_audio.wav"
     input_dir = parent_dir / "input.mp4"
     predictions_dir = parent_dir / "predictions.txt"
+
+    print(video_dir)
 
     audio_command = [
         "sshpass", 
@@ -100,7 +106,7 @@ def main():
     pepper_test.text_to_speech.say("Today you look " + emotions[prediction] + "!\n")
     print("[PEPPER] Today you look " + emotions[prediction] + "!\n")
 
-    pepper_test.perform_behaviour(prediction)
+    pepper_test.perform_behaviours(prediction)
       
     pepper_test.text_to_speech.say("How it was?")
     print("[Pepper] How it was?\n") 
@@ -125,3 +131,4 @@ def main():
        
 if __name__ == "__main__":
     main()
+    # test()
