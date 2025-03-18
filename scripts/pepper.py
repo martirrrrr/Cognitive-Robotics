@@ -60,7 +60,7 @@ class Pepper:
                 event_data = self.memory.getData("WordRecognized")
                 if event_data and isinstance(event_data, list) and len(event_data) > 1:
                     word, confidence = event_data[0], event_data[1]
-                    if confidence >= 0.5:
+                    if confidence >= 0.4:
                         recognized_word = word
                         print("[INFO] Detected word: " + str(recognized_word) + ".\n")
                         self.text_to_speech.say("You have said: " + str(recognized_word))
@@ -131,14 +131,7 @@ class Pepper:
             
             self.start_video_recording(video_filename)
             self.start_audio_recording(audio_filename)
-        
-            time.sleep(4)
-            
-            self.stop_video_recording()
-            self.stop_audio_recording()
-            
-            print("[INFO] Audio and video recording successfully completed!\n")
-        
+           
         except Exception as e:
             print("[ERROR] An issue occurred:", e)     
 
@@ -152,4 +145,7 @@ class Pepper:
         else:
             self.behaviours_module.perform_sad(self.play_sound, self.recognize_speech)
 
-    
+    def stop_recording(self):
+        self.stop_video_recording()
+        self.stop_audio_recording()   
+        print("[INFO] Audio and video recording successfully completed!\n") 

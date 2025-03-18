@@ -5,7 +5,9 @@ from pathlib import Path
 
 def test():
     pepper_test = pepper.Pepper()
-    pepper_test.behaviours_module.perform_neutral(pepper_test.play_sound, pepper_test.recognize_speech)
+    # pepper_test.behaviours_module.perform_neutral(pepper_test.play_sound, pepper_test.recognize_speech)
+    # pepper_test.behaviours_module.perform_happy(pepper_test.play_sound, pepper_test.recognize_speech)
+    pepper_test.behaviours_module.perform_angry(pepper_test.play_sound, pepper_test.recognize_speech)
 
 def main():
     script_dir = Path(__file__).parent
@@ -130,5 +132,5 @@ def main():
     subprocess.run(prediction_command)
        
 if __name__ == "__main__":
-    main()
-    # test()
+    # main()
+    test()
