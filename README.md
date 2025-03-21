@@ -161,7 +161,7 @@ Based on the classification output, Pepper adopts specific interaction strategie
 
 ---
 
-### **4. Data Visualization & Behavior Tracking (Optional) 📊 **
+### **4. Data Visualization & Behavior Tracking (Optional) ** 📊
 -	Throughout the entire interaction, data acquisition is continuously performed to track real-time emotional variations using Pepper.
 -	EEG, audio, and video data are collected and classified at the end of the session for a comprehensive evaluation of emotional states.
 -	For deeper analysis and validation, we segment the recorded data into 3-second time slices, analyzing them at regular 10-second intervals. This allows us to monitor emotional fluctuations throughout the session.
