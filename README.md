@@ -161,10 +161,12 @@ Based on the classification output, Pepper adopts specific interaction strategie
 
 ---
 
-### **4. Process Repetition (Optional)**
-- After the interaction, the user can choose to repeat the process to assess the effect of their engagement with Pepper.
-- A new EEG and audio/video acquisition is performed to analyze emotional state variations.
-- Data is saved and compared with the previous prediction to monitor the system’s effectiveness in improving user well-being.
-We will compare the accuracy of the initial predicted class with the correspondent output post-interaction to track the effect of the entertainment session with Pepper.
+### **4. Data Visualization & Behavior Tracking (Optional) 📊 **
+-	Throughout the entire interaction, data acquisition is continuously performed to track real-time emotional variations using Pepper.
+-	EEG, audio, and video data are collected and classified at the end of the session for a comprehensive evaluation of emotional states.
+-	For deeper analysis and validation, we segment the recorded data into 3-second time slices, analyzing them at regular 10-second intervals. This allows us to monitor emotional fluctuations throughout the session.
+-	Each time slice is classified using our model to identify potential variations in the user’s state over time.
+-	Finally, we compare the initial predicted emotional class with the classification results obtained post-interaction, assessing the impact of the session with Pepper on the user’s well-being.
+- To better understand emotional variations over time, we plot the collected data, allowing us to visually track behavioral trends throughout the session. This helps in identifying patterns and assessing the impact of the interaction with Pepper 📈.
 
 ---
