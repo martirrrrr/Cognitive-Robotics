@@ -49,7 +49,8 @@ iri_reversed_items = {
     'Personal Distress' : [13, 15, 19]
 }
 
-df = pd.read_csv('test.csv')
+# Load csv as DataFrame. Replace "dummy.csv" with your results sheet
+df = pd.read_csv('dummy.csv')
 
 # Partitioning
 df_big5 = df.iloc[:, 1:45]
