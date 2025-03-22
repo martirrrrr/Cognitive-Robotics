@@ -105,7 +105,13 @@ ___
 ## IV. **Steps**
 The following process explanation describes the dataflow and the sequence of actions performed by authors' devices. For single device run, skip the SCP transfer step between Device1 and Device2 in EEG acquisition.
 
-### **0. Connection and Startup**
+___
+
+### **0. Questionnaires**
+Participants anonymously complete the IRI (Interpersonal Reactivity Index) and BIG5 personality questionnaires, which are then analyzed as part of our study. These responses help us explore the relationship between personality traits, empathic tendencies, and the emotional variations observed during interactions with Pepper.
+___
+
+### **1. Connection and Startup**
 1. **Powering up Pepper** and connecting it to Device 1 via a local network for data transmission.
 2. **User preparation:** correctly positioning the Emotiv Epoc X headset on the user's head to ensure accurate EEG readings.
 3. **Starting the EEG session** on Device 2, which begins real-time brain data collection.
@@ -114,7 +120,7 @@ The following process explanation describes the dataflow and the sequence of act
 
 ---
 
-### **1. Data Acquisition Phase**
+### **2. Data Acquisition Phase**
 #### **EEG Data:**
 - Collected by the Emotiv Epoc X headset and managed via the Emotiv APP on Device 2.
 - Transferred to Device 1 using the SCP protocol for secure and reliable connection.
@@ -128,7 +134,7 @@ The following process explanation describes the dataflow and the sequence of act
   
 ---
 
-### **2. Processing and Final Prediction**
+### **3. Processing and Final Prediction**
 1. **Data preprocessing:** EEG, audio, and video data are converted into formats compatible with training datasets:
    - **RAVDESS** for audio/video data (emotion recognition from voice and facial expressions).
    - **SEED-IV** for EEG data (brainwave analysis for emotion recognition).
@@ -142,7 +148,7 @@ The following process explanation describes the dataflow and the sequence of act
 
 ---
 
-### **3. Human-Machine Interaction**
+### **4. Human-Machine Interaction**
 Based on the classification output, Pepper adopts specific interaction strategies to improve the user's emotional well-being:
 
 - **😔 Sad:**
@@ -163,12 +169,13 @@ Based on the classification output, Pepper adopts specific interaction strategie
 
 ---
 
-### **4. Data Visualization & Behavior Tracking (Optional)** 📊
+### **5. Data Visualization & Behavior Tracking (Optional)** 📊
 -	Throughout the entire interaction, data acquisition is continuously performed to track real-time emotional variations using Pepper.
 -	EEG, audio, and video data are collected and classified at the end of the session for a comprehensive evaluation of emotional states.
 -	For deeper analysis and validation, we segment the recorded data into 3-second time slices, analyzing them at regular 10-second intervals. This allows us to monitor emotional fluctuations throughout the session.
 -	Each time slice is classified using our model to identify potential variations in the user’s state over time.
 -	Finally, we compare the initial predicted emotional class with the classification results obtained post-interaction, assessing the impact of the session with Pepper on the user’s well-being.
 - To better understand emotional variations over time, we plot the collected data, allowing us to visually track behavioral trends throughout the session. This helps in identifying patterns and assessing the impact of the interaction with Pepper 📈.
+- To complement this analysis, participants also complete the IRI (Interpersonal Reactivity Index) and BIG5 (Five-Factor Model) questionnaires. The responses, collected anonymously, are processed to identify personality traits and empathic tendencies, helping to correlate these factors with emotional fluctuations observed during the session.
 
 ---
