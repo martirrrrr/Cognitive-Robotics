@@ -25,4 +25,4 @@ def extract_segments(video_path, output_folder, interval=10, slice=3):
 # Esempio di utilizzo su Windows
 video_input = "video.mp4" 
 output_dir = "../video"
-estrai_segmenti(video_input, output_dir)
+extract_segments(video_input, output_dir)
