@@ -2,27 +2,40 @@ import os
 import subprocess
 from moviepy.editor import VideoFileClip
 
-def extract_segments(video_path, output_folder, interval=10, slice=3):
-    # Create folder
+def extract_segments(video_path, output_folder, interval=10, slice_duration=3):
+    # Crea la cartella se non esiste
     os.makedirs(output_folder, exist_ok=True)
 
-    # Ottieni la durata del video
+    # Ottieni la durata totale del video come float
     clip = VideoFileClip(video_path)
-    total = int(clip.duration)
+    total_duration = clip.duration  # Più preciso con i float
 
-    # Nome base per i segmenti
-    base_name = os.path.splitext(os.path.basename(video_path))[0]
+    # Contatore per i nomi dei file
+    slice_index = 1
+    start_time = 0  # Iniziamo da 0s
 
-    for start_time in range(0, total, interval):
-        output_file = os.path.join(output_folder, f"{base_name}segment{start_time}.mp4")
-        
-        cmd = ["ffmpeg", "-y", "-ss", str(start_time), "-i", video_path,"-t", str(slice), "-c", "copy", output_file]
+    while start_time + slice_duration <= total_duration:  # Controlliamo PRIMA di creare il segmento
+        print(f"DEBUG - start_time: {start_time}, total_duration: {total_duration}")
 
+        output_file = os.path.join(output_folder, f"Video_Slice_{slice_index}.mp4")
+
+        # Comando ffmpeg per estrarre il segmento
+        cmd = ["ffmpeg", "-y", "-ss", str(start_time), "-i", video_path, "-t", str(slice_duration), "-c", "copy", output_file]
+
+        # Esegui il comando senza output
         subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-    print(f"Segment saved in: {output_folder}")
+        print(f"Creato: {output_file}")
 
-# Esempio di utilizzo su Windows
-video_input = "video.mp4" 
-output_dir = "../video"
+        # Incrementa il contatore per il nome del file
+        slice_index += 1
+
+        # Aggiorna il tempo di inizio con il salto di 10s
+        start_time += interval + slice_duration
+
+    print(f"Tutti i segmenti sono stati salvati in: {output_folder}")
+
+
+video_input = "./Test/User_Folder/sampleN.mp4"
+output_dir = "./Test/User_Folder/Video_Slices/"
 extract_segments(video_input, output_dir)
